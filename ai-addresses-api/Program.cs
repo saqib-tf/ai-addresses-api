@@ -31,6 +31,7 @@ var host = new HostBuilder()
             //services.ConfigureFunctionsApplicationInsights();
 
             services.ConfigureEnvironmentVariables();
+            services.ConfigureDatabaseConnectionString();
             services.ConfigureApplicationServices();
             services.ConfigureInfrastructureServices(configuration);
         }

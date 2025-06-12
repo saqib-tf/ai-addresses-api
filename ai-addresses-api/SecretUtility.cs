@@ -10,5 +10,8 @@ namespace ai_addresses_api
     {
         public static string? AZURE_BLOB_CONNECTION_STRING =>
             Environment.GetEnvironmentVariable("AZURE_BLOB_CONNECTION_STRING");
+
+        public static string? SQL_SERVER_CONNECTION_STRING =>
+            Environment.GetEnvironmentVariable("SQL_SERVER_CONNECTION_STRING");
     }
 }
