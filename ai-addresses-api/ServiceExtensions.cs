@@ -11,7 +11,7 @@ namespace ai_addresses_api
 {
     public static class ServiceExtensions
     {
-        public static void ConfigureEnvironmentVariables(this IServiceCollection services)
+        public static void LoadEnvFileLocal(this IServiceCollection services)
         {
             DotNetEnv.Env.Load(Path.Combine(Directory.GetCurrentDirectory(), ".env"));
         }

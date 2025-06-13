@@ -30,7 +30,11 @@ var host = new HostBuilder()
             //services.AddApplicationInsightsTelemetryWorkerService();
             //services.ConfigureFunctionsApplicationInsights();
 
-            services.ConfigureEnvironmentVariables();
+            if (appBuilder.HostingEnvironment.IsDevelopment())
+            {
+                services.LoadEnvFileLocal();
+            }
+
             services.ConfigureDatabaseConnectionString();
             services.ConfigureApplicationServices();
             services.ConfigureInfrastructureServices(configuration);
