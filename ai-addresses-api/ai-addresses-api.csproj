@@ -8,13 +8,9 @@
     <RootNamespace>ai_addresses_api</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <None Remove=".env" />
     <None Remove="appSettings.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include=".env">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="appSettings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -40,6 +36,9 @@
     <ProjectReference Include="..\ai-addresses-services\ai-addresses-services.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <None Update=".env">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
     <None Update="host.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

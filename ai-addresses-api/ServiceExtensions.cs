@@ -13,7 +13,9 @@ namespace ai_addresses_api
     {
         public static void LoadEnvFileLocal(this IServiceCollection services)
         {
-            DotNetEnv.Env.Load(Path.Combine(Directory.GetCurrentDirectory(), ".env"));
+            DotNetEnv
+                .Env.TraversePath()
+                .Load(Path.Combine(Directory.GetCurrentDirectory(), ".env"));
         }
 
         public static void ConfigureDatabaseConnectionString(this IServiceCollection services)
