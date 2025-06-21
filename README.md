@@ -18,6 +18,8 @@ Run the following commands in Azure SQL Server by connecting with SQL Management
 The identity name is the Azure functions app name, not the principal id which is a guid.
 
 CREATE USER [<identity -name>] FROM EXTERNAL PROVIDER;
+
 ALTER ROLE db_datareader ADD MEMBER [<identity-name>];
+
 ALTER ROLE db_datawriter ADD MEMBER [<identity-name>];
 
