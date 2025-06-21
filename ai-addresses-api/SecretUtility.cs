@@ -13,5 +13,7 @@ namespace ai_addresses_api
 
         public static string? SQL_SERVER_CONNECTION_STRING =>
             Environment.GetEnvironmentVariable("SQL_SERVER_CONNECTION_STRING");
+
+        public static string? APIKey => Environment.GetEnvironmentVariable("X_API_KEY");
     }
 }

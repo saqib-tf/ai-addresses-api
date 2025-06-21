@@ -21,6 +21,7 @@ var host = new HostBuilder()
     .ConfigureFunctionsWebApplication(builder =>
     {
         builder.UseMiddleware<GlobalExceptionMiddleware>();
+        builder.UseMiddleware<ApiKeyMiddleware>();
     })
     .ConfigureServices(
         (appBuilder, services) =>

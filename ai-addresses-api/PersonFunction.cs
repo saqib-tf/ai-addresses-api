@@ -122,7 +122,7 @@ namespace ai_addresses_api
 
         [Function("SearchPersons")]
         public async Task<IActionResult> SearchPersonsAsync(
-            [HttpTrigger(AuthorizationLevel.Function, "get", Route = "person/search")]
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "person/search")]
                 HttpRequestData req
         )
         {
