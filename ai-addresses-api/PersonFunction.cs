@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
+using ai_addresses_api; // Added for Constants
 using ai_addresses_data.Entity;
 using ai_addresses_services.Commands;
 using ai_addresses_services.Models;
@@ -121,7 +122,7 @@ namespace ai_addresses_api
 
         [Function("SearchPersons")]
         public async Task<IActionResult> SearchPersonsAsync(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "person/search")]
+            [HttpTrigger(AuthorizationLevel.Function, "get", Route = "person/search")]
                 HttpRequestData req
         )
         {
@@ -184,7 +185,7 @@ namespace ai_addresses_api
 
                 // Upload to Azure Blob Storage
                 string connectionString = SecretUtility.AZURE_BLOB_CONNECTION_STRING ?? "";
-                string containerName = "profile-pictures";
+                string containerName = Constants.ProfilePicturesContainer;
 
                 var blobServiceClient = new BlobServiceClient(connectionString);
                 var containerClient = blobServiceClient.GetBlobContainerClient(containerName);
