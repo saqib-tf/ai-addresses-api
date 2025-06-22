@@ -42,7 +42,7 @@ namespace ai_addresses_api
 
         [Function("GetAllPersons")]
         public async Task<IActionResult> GetAllPersonsAsync(
-            [HttpTrigger(AuthorizationLevel.Function, "get", Route = "person")] HttpRequestData req
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "person")] HttpRequestData req
         )
         {
             var persons = await _mediator.Send(new GetAllPersonsQuery());
