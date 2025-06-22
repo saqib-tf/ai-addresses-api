@@ -15,5 +15,7 @@ namespace ai_addresses_api
             Environment.GetEnvironmentVariable("SQL_SERVER_CONNECTION_STRING");
 
         public static string? APIKey => Environment.GetEnvironmentVariable("X_API_KEY");
+
+        public static string? GOOGLE_CLIENT_ID => Environment.GetEnvironmentVariable("GOOGLE_CLIENT_ID");
     }
 }

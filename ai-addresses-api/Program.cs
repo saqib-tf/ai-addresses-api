@@ -22,6 +22,7 @@ var host = new HostBuilder()
     {
         builder.UseMiddleware<GlobalExceptionMiddleware>();
         //builder.UseMiddleware<ApiKeyMiddleware>();
+        builder.UseMiddleware<JwtAuthMiddleware>();
     })
     .ConfigureServices(
         (appBuilder, services) =>
